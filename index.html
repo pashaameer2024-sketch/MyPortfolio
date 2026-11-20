@@ -1,1 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Personal Portfolio</title>
 
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #0b1120;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+/* NAVBAR */
+
+.navbar {
+    background: #111827;
+    padding: 15px;
+}
+
+.navbar-brand {
+    color: #00d4ff !important;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.nav-link {
+    color: white !important;
+    margin-left: 10px;
+}
+
+.nav-link:hover {
+    color: #00d4ff !important;
+}
+
+/* HOME */
+
+.home {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 80px;
+    background: linear-gradient(135deg, #0b1120, #172554);
+}
+
+.home h1 {
+    font-size: 60px;
+    color: #00d4ff;
+    font-weight: bold;
+}
+
+.home h2 {
+    margin: 20px 0;
+}
+
+.home p {
+    color: #cbd5e1;
+    line-height: 1.8;
+}
+
+.profile {
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #00d4ff;
+    box-shadow: 0 0 25px #00d4ff;
+}
+
+.social a {
+    color: #00d4ff;
+    font-size: 25px;
+    margin-right: 20px;
+}
+
+/* SECTIONS */
+
+.section {
+    padding: 90px 20px;
+}
+
+.section-title {
+    text-align: center;
+    color: #00d4ff;
+    font-size: 38px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.about-text {
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+    line-height: 2;
+    color: #cbd5e1;
+}
+
+/* EDUCATION */
+
+.education-box {
+    background: #172033;
+    padding: 25px;
+    margin: 20px auto;
+    max-width: 800px;
+    border-left: 4px solid #00d4ff;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.education-box:hover {
+    transform: translateY(-5px);
+}
+
+/* SKILLS */
+
+.progress {
+    height: 20px;
+    background: #263449;
+    margin-bottom: 25px;
+}
+
+.progress-bar {
+    background: #00d4ff;
+    color: black;
+    font-weight: bold;
+}
+
+/* PROJECTS */
+
+.project-card {
+    background: #172033;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    height: 100%;
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px #00d4ff;
+}
+
+.project-card i {
+    color: #00d4ff;
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+/* CERTIFICATIONS */
+
+.certificate {
+    background: #172033;
+    padding: 25px;
+    border-radius: 10px;
+    margin: 15px;
+}
+
+.certificate i {
+    color: #00d4ff;
+    font-size: 35px;
+}
+
+/* CONTACT */
+
+.contact-form {
+    max-width: 650px;
+    margin: auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    background: #172033;
+    color: white;
+    border: 1px solid #00d4ff;
+    border-radius: 8px;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #cbd5e1;
+}
+
+/* BUTTONS */
+
+.btn-primary {
+    background: #00bcd4;
+    border: none;
+    color: #06101d;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background: white;
+    color: #06101d;
+}
+
+/* FOOTER */
+
+footer {
+    background: #111827;
+    text-align: center;
+    padding: 25px;
+}
+
+footer a {
+    color: #00d4ff;
+    text-decoration: none;
+}
+
+/* ANIMATION */
+
+.fade-in {
+    animation: appear 1.5s ease;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media(max-width:768px) {
+    .home {
+        text-align: center;
+        padding: 130px 20px 50px;
+    }
+
+    .home h1 {
+        font-size: 40px;
+    }
+
+    .profile {
+        margin-top: 40px;
+        width: 210px;
+        height: 210px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+<div class="container">
+
+<a class="navbar-brand" href="#home">MyPortfolio.</a>
+
+<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="menu">
+
+<ul class="navbar-nav ms-auto">
+<li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+<li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+<li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+<li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+<li class="nav-item"><a class="nav-link" href="#certifications">Certificates</a></li>
+<li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+</ul>
+
+</div>
+</div>
+</nav>
+
+<!-- HOME -->
+
+<section id="home" class="home">
+<div class="container fade-in">
+
+<div class="row align-items-center">
+
+<div class="col-md-7">
+
+<h4>Hello, I'm</h4>
+
+<h1>Your Name</h1>
+
+<h2>I'm a <span id="typing"></span></h2>
+
+<p>
+I am a BTech Computer Science Engineering student.
+I am passionate about programming, web development,
+technology and creating innovative projects.
+</p>
+
+<a href="#about" class="btn btn-primary">About Me</a>
+<a href="#contact" class="btn btn-outline-light">Contact Me</a>
+
+<div class="social mt-4">
+
+<a href="https://github.com/yourusername"><i class="fab fa-github"></i></a>
+
+<a href="https://linkedin.com/in/yourusername"><i class="fab fa-linkedin"></i></a>
+
+<a href="https://instagram.com/yourusername"><i class="fab fa-instagram"></i></a>
+
+</div>
+
+</div>
+
+<div class="col-md-5 text-center">
+
+<img src="https://placehold.co/300x300/172033/00d4ff?text=Your+Photo" class="profile" alt="Profile Photo">
+
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- ABOUT -->
+
+<section id="about" class="section">
+
+<div class="container">
+
+<h2 class="section-title">About Me</h2>
+
+<p class="about-text">
+
+Hello! I am a BTech Computer Science Engineering student.
+
+I am interested in software development, web technologies,
+programming and problem solving.
+
+My goal is to become a skilled software developer
+and build innovative applications.
+
+</p>
+
+</div>
+</section>
+
+<!-- EDUCATION -->
+
+<section id="education" class="section">
+
+<div class="container">
+
+<h2 class="section-title">My Education</h2>
+
+<div class="education-box">
+
+<h4>BTech Computer Science Engineering</h4>
+
+<p>College Name: Your College Name</p>
+
+<p>Status: Currently Pursuing</p>
+
+</div>
+
+<div class="education-box">
+
+<h4>Intermediate (12th)</h4>
+
+<p>School Name: Your School Name</p>
+
+<p>Year: Your Passing Year</p>
+
+</div>
+
+<div class="education-box">
+
+<h4>High School (10th)</h4>
+
+<p>School Name: Your School Name</p>
+
+<p>Year: Your Passing Year</p>
+
+</div>
+
+</div>
+</section>
+
+<!-- SKILLS -->
+
+<section id="skills" class="section">
+
+<div class="container">
+
+<h2 class="section-title">My Skills</h2>
+
+<div class="row">
+
+<div class="col-md-6">
+
+<h5>HTML</h5>
+<div class="progress">
+<div class="progress-bar" style="width:90%">90%</div>
+</div>
+
+<h5>CSS</h5>
+<div class="progress">
+<div class="progress-bar" style="width:80%">80%</div>
+</div>
+
+<h5>JavaScript</h5>
+<div class="progress">
+<div class="progress-bar" style="width:70%">70%</div>
+</div>
+
+</div>
+
+<div class="col-md-6">
+
+<h5>Python</h5>
+<div class="progress">
+<div class="progress-bar" style="width:75%">75%</div>
+</div>
+
+<h5>Java</h5>
+<div class="progress">
+<div class="progress-bar" style="width:65%">65%</div>
+</div>
+
+<h5>Bootstrap</h5>
+<div class="progress">
+<div class="progress-bar" style="width:80%">80%</div>
+</div>
+
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- PROJECTS -->
+
+<section id="projects" class="section">
+
+<div class="container">
+
+<h2 class="section-title">My Projects</h2>
+
+<div class="row g-4">
+
+<div class="col-md-4">
+
+<div class="project-card">
+
+<i class="fas fa-globe"></i>
+
+<h4>College Portal</h4>
+
+<p>Responsive college portal website using HTML, CSS and Bootstrap.</p>
+
+</div>
+</div>
+
+<div class="col-md-4">
+
+<div class="project-card">
+
+<i class="fas fa-chart-line"></i>
+
+<h4>Wine Quality Prediction</h4>
+
+<p>Machine learning project using Python to predict wine quality.</p>
+
+</div>
+</div>
+
+<div class="col-md-4">
+
+<div class="project-card">
+
+<i class="fas fa-calculator"></i>
+
+<h4>Calculator</h4>
+
+<p>A calculator application using HTML, CSS and JavaScript.</p>
+
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- CERTIFICATIONS -->
+
+<section id="certifications" class="section">
+
+<div class="container text-center">
+
+<h2 class="section-title">My Certifications</h2>
+
+<div class="row justify-content-center">
+
+<div class="col-md-4">
+<div class="certificate">
+<i class="fas fa-certificate"></i>
+<h4 class="mt-3">Web Development</h4>
+<p>Add your certificate details here.</p>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="certificate">
+<i class="fas fa-certificate"></i>
+<h4 class="mt-3">Python Programming</h4>
+<p>Add your certificate details here.</p>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact" class="section">
+
+<div class="container">
+
+<h2 class="section-title">Contact Me</h2>
+
+<form class="contact-form" id="contactForm">
+
+<input type="text" id="name" placeholder="Your Name" required>
+
+<input type="email" id="email" placeholder="Your Email" required>
+
+<input type="text" id="subject" placeholder="Subject" required>
+
+<textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+
+<button type="submit" class="btn btn-primary w-100">Send Message</button>
+
+</form>
+
+</div>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>© 2026 Your Name | All Rights Reserved</p>
+
+<a href="#home"><i class="fas fa-arrow-up"></i> Back To Top</a>
+
+</footer>
+
+<!-- JAVASCRIPT -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+
+// Typing Animation
+
+const words = [
+"Web Developer",
+"Python Programmer",
+"BTech CSE Student",
+"Software Developer"
+];
+
+let wordIndex = 0;
+let charIndex = 0;
+let deleting = false;
+
+function typeEffect() {
+
+let currentWord = words[wordIndex];
+
+let typing = document.getElementById("typing");
+
+typing.textContent = deleting
+? currentWord.substring(0, charIndex--)
+: currentWord.substring(0, charIndex++);
+
+let speed = deleting ? 60 : 120;
+
+if (!deleting && charIndex === currentWord.length + 1) {
+deleting = true;
+speed = 1000;
+}
+
+if (deleting && charIndex === 0) {
+deleting = false;
+wordIndex = (wordIndex + 1) % words.length;
+}
+
+setTimeout(typeEffect, speed);
+
+}
+
+typeEffect();
+
+
+// Contact Form Demo
+
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+
+e.preventDefault();
+
+let name = document.getElementById("name").value;
+
+alert("Thank you " + name + "! Your message was submitted in this demo.");
+
+this.reset();
+
+});
+
+
+// Close mobile menu after clicking a link
+
+document.querySelectorAll(".navbar-nav .nav-link").forEach(link => {
+
+link.addEventListener("click", () => {
+
+let menu = document.getElementById("menu");
+
+if (menu.classList.contains("show")) {
+bootstrap.Collapse.getOrCreateInstance(menu).hide();
+}
+
+});
+
+});
+
+</script>
+
+</body>
+</html>
